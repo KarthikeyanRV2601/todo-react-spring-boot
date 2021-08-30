@@ -65,7 +65,6 @@ const Home=()=>{
                 todos.length==0&&<h4>loading</h4>
             } 
         </form>
-        <small className="small">Left click on the todo to mark as complete. <br/> Right click on the todo to delete it.</small>
     </div>
     )
    
