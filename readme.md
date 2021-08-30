@@ -9,7 +9,7 @@ One can add delete or edit their todos
 <h2>📸 SCREENSHOTS</h2>
 <p>
   Home page
-  <img src="https://github.com/KarthikeyanRV2601/todo-react-spring-boot/raw/main/screenshots/home.jpg"/>
+  <img src="https://github.com/KarthikeyanRV2601/todo-react-spring-boot/raw/main/screenshots/todo-home.jpg"/>
 </p>
 
 <h2>⌨️ DEVELOPERS</h2>
