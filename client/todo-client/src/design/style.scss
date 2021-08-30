@@ -47,6 +47,21 @@ form{
     padding: 0;
     margin: 0;
     list-style-type: none;
+    .wrap{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 10px;
+        img{
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+            &:hover{
+                opacity: 0.5;
+                cursor: pointer;
+            }
+        }
+    }
 }
 
 .todos li{

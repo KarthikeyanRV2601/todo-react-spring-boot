@@ -35,9 +35,9 @@ public class serverApi {
     }
     
     @PostMapping("/add-todo")
-    public void addTodo(@RequestBody todo todoData)
+    public String addTodo(@RequestBody todo todoData)
     {
-        serviceInstance.addTodos(todoData);
+        return serviceInstance.addTodos(todoData);
     }
 
 }

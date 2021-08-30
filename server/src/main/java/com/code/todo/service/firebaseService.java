@@ -4,6 +4,7 @@ import java.util.*;
 
 import com.code.todo.model.todo;
 import com.google.api.core.ApiFuture;
+import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.QueryDocumentSnapshot;
@@ -39,12 +40,19 @@ public class firebaseService {
         dbFirebase.collection("todo-list").document(id).delete();
     }
 
-    public void addTodos(todo todoBody)
+    public String addTodos(todo todoBody)
     {
-        Firestore dbFirebase=FirestoreClient.getFirestore();
-        Map<String,String> data=new HashMap<>();
-        data.put("description", todoBody.getDescription());
-        dbFirebase.collection("todo-list").add(data);
+        try{
+            Firestore dbFirebase=FirestoreClient.getFirestore();
+            Map<String,String> data=new HashMap<>();
+            data.put("description", todoBody.getDescription());
+            ApiFuture<DocumentReference> refernce= dbFirebase.collection("todo-list").add(data);
+            return refernce.get().getId();
+        }
+        catch(Exception e)
+        {
+            return e.toString();
+        }
     }
 
 }

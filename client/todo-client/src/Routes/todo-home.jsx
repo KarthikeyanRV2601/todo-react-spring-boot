@@ -7,17 +7,23 @@ const Home=()=>{
     const [newTodo,setnewTodo]=useState('');
     
     useEffect(() => {
+        axios.get("http://localhost:8080/get-todos").then(response=>{
+            setTodos(response.data);
+        })
         //get the todos from firebase here
     }, [])
     
     const addTodo=(value)=>{
-        setTodos([...todos,value]);
+        
         let body= {
-            "id":1,
+            "id":"1",
             "description":value
         }
         axios.post("http://localhost:8080/add-todo",body).then(response=>{
-            console.log(response)
+            setTodos([...todos,{
+                "id":response.data,
+                "description":value
+            }])
         })
     }
 
@@ -45,14 +51,19 @@ const Home=()=>{
 
         />
         <ul className="todos" id="todos">
-            {
+            {todos&&
                 todos.map((todo,key)=>{
                     return(
-                        <Todo todoDescription={todo}/>
+                        <Todo todoDescription={todo.description} todoId={todo.id} todos={todos} setTodos={setTodos}/>
                     )
                 })
+
             }
-        </ul>   
+           
+        </ul>  
+        {
+                todos.length==0&&<h4>loading</h4>
+            } 
         </form>
         <small className="small">Left click on the todo to mark as complete. <br/> Right click on the todo to delete it.</small>
     </div>

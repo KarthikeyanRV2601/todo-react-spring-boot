@@ -69,6 +69,31 @@ form {
   list-style-type: none;
 }
 
+.todos .wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 10px;
+}
+
+.todos .wrap img {
+  width: 24px;
+  height: 24px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.todos .wrap img:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
 .todos li {
   font-size: 1.5rem;
   padding: 1rem 2rem;
