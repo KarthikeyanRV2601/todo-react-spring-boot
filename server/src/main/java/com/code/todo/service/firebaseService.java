@@ -14,11 +14,28 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class firebaseService {
-    public List<todo> getTodos()
+
+    public String userSignup(String _uid){
+        try{
+            // System.out.println(_user.getUserId());
+            Firestore dbFirebase=FirestoreClient.getFirestore();
+            Map<String,String> data=new HashMap<>();
+            data.put("description", "Welcome to todo!!");
+            ApiFuture<DocumentReference> reference= dbFirebase.collection(_uid.substring(0,_uid.length()-1)).add(data);
+            return reference.get().getId();
+        }
+        catch(Exception e)
+        {
+            return e.toString();
+        }
+    }
+
+    public List<todo> getTodos(String collections_id)
     {
         try{
+        // System.out.pr
         Firestore dbFirebase=FirestoreClient.getFirestore();
-        ApiFuture<QuerySnapshot> future =dbFirebase.collection("todo-list").get();
+        ApiFuture<QuerySnapshot> future =dbFirebase.collection(collections_id).get();
         List<QueryDocumentSnapshot> documents = future.get().getDocuments();
         List<todo> todos=new ArrayList<todo>();
 
@@ -34,19 +51,19 @@ public class firebaseService {
         
     }
 
-    public void deleteTodo(String id)
+    public void deleteTodo(String collections_id,String id)
     {
         Firestore dbFirebase=FirestoreClient.getFirestore();
-        dbFirebase.collection("todo-list").document(id).delete();
+        dbFirebase.collection(collections_id).document(id).delete();
     }
 
-    public String addTodos(todo todoBody)
+    public String addTodos(String collections_id,todo todoBody)
     {
         try{
             Firestore dbFirebase=FirestoreClient.getFirestore();
             Map<String,String> data=new HashMap<>();
             data.put("description", todoBody.getDescription());
-            ApiFuture<DocumentReference> refernce= dbFirebase.collection("todo-list").add(data);
+            ApiFuture<DocumentReference> refernce= dbFirebase.collection(collections_id).add(data);
             return refernce.get().getId();
         }
         catch(Exception e)
@@ -54,5 +71,6 @@ public class firebaseService {
             return e.toString();
         }
     }
+
 
 }

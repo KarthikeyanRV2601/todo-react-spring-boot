@@ -15,71 +15,73 @@ body{
     color: #444;
 }
 
-h1{
-    text-align: center;
-    color: rgb(175, 135, 214);
-    font-size: 6rem;
-    opacity: 0.4;
-    margin: 0;
-}
-
-form{
-    max-width: 100%;
-    width: 500px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.input{
-    width: 100%;
-    display: block;
-    padding: 0.6rem 2rem;
-    font-size: 2rem;
-    border: none;
-    color: #444;
+.home{
+    h1{
+        text-align: center;
+        color: rgb(175, 135, 214);
+        font-size: 6rem;
+        opacity: 0.4;
+        margin: 0;
+    }
     
-}
-.input::placeholder{
-   color: #d5d5d5;
-}
-
-.todos{
-    background-color: white;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-    .wrap{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-right: 10px;
-        img{
-            width: 24px;
-            height: 24px;
-            object-fit: contain;
-            &:hover{
-                opacity: 0.5;
-                cursor: pointer;
+    form{
+        max-width: 100%;
+        width: 500px;
+    }
+    
+    .input{
+        width: 100%;
+        display: block;
+        padding: 0.6rem 2rem;
+        font-size: 2rem;
+        border: none;
+        color: #444;
+        
+    }
+    .input::placeholder{
+       color: #d5d5d5;
+    }
+    
+    .todos{
+        background-color: white;
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        .wrap{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 10px;
+            img{
+                width: 24px;
+                height: 24px;
+                object-fit: contain;
+                &:hover{
+                    opacity: 0.5;
+                    cursor: pointer;
+                }
             }
         }
     }
-}
-
-.todos li{
-    font-size: 1.5rem;
-    padding: 1rem 2rem;
-    border-top: 1px solid #f5f5f5;
-    cursor: pointer;
-}
-
-.todos li.completed{
-    text-decoration: line-through;
-    color: #b5b5b5;
-}
-
-.small{
-    margin-top: 2rem;
-    color: #b5b5b5;
-    text-align: center;
-    display: flex;
-    justify-content: center;
+    
+    .todos li{
+        font-size: 1.5rem;
+        padding: 1rem 2rem;
+        border-top: 1px solid #f5f5f5;
+        cursor: pointer;
+    }
+    
+    .todos li.completed{
+        text-decoration: line-through;
+        color: #b5b5b5;
+    }
+    
+    .small{
+        margin-top: 2rem;
+        color: #b5b5b5;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+    
 }

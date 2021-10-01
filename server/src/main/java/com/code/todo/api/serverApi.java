@@ -20,24 +20,29 @@ public class serverApi {
     @Autowired firebaseService serviceInstance;
 
     
-    @GetMapping("/get-todos")
-    public List<todo> getTodos()
+    @GetMapping("/get-todos/{collections_id}")
+    public List<todo> getTodos(@PathVariable("collections_id") String collections_id)
     {
         List<todo> todos=new ArrayList<todo>();
-        todos=serviceInstance.getTodos();
+        todos=serviceInstance.getTodos(collections_id);
         return todos;
     }
 
-    @DeleteMapping("/delete-todo-by-id/{id}")
-    public void deleteTodo(@PathVariable("id") String id)
+    @DeleteMapping("/delete-todo-by-id/{collections_id}/{id}")
+    public void deleteTodo(@PathVariable("collections_id") String collections_id,@PathVariable("id") String id)
     {
-        serviceInstance.deleteTodo(id);
+        serviceInstance.deleteTodo(collections_id,id);
     }
     
-    @PostMapping("/add-todo")
-    public String addTodo(@RequestBody todo todoData)
+    @PostMapping("/add-todo/{id}")
+    public String addTodo(@PathVariable("id") String id,@RequestBody todo todoData)
     {
-        return serviceInstance.addTodos(todoData);
+        return serviceInstance.addTodos(id,todoData);
     }
 
+    @PostMapping("/usersignup")
+    public String userSignup(@RequestBody String _uid)
+    {
+        return serviceInstance.userSignup(_uid);
+    }
 }

@@ -21,7 +21,6 @@ public class todo {
         return this.description;
     }
     
-
     
 }
 

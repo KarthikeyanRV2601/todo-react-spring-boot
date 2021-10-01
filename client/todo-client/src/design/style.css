@@ -22,7 +22,7 @@ body {
   color: #444;
 }
 
-h1 {
+.home h1 {
   text-align: center;
   color: #af87d6;
   font-size: 6rem;
@@ -30,14 +30,12 @@ h1 {
   margin: 0;
 }
 
-form {
+.home form {
   max-width: 100%;
   width: 500px;
-  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.input {
+.home .input {
   width: 100%;
   display: block;
   padding: 0.6rem 2rem;
@@ -46,30 +44,30 @@ form {
   color: #444;
 }
 
-.input::-webkit-input-placeholder {
+.home .input::-webkit-input-placeholder {
   color: #d5d5d5;
 }
 
-.input:-ms-input-placeholder {
+.home .input:-ms-input-placeholder {
   color: #d5d5d5;
 }
 
-.input::-ms-input-placeholder {
+.home .input::-ms-input-placeholder {
   color: #d5d5d5;
 }
 
-.input::placeholder {
+.home .input::placeholder {
   color: #d5d5d5;
 }
 
-.todos {
+.home .todos {
   background-color: white;
   padding: 0;
   margin: 0;
   list-style-type: none;
 }
 
-.todos .wrap {
+.home .todos .wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -82,31 +80,31 @@ form {
   padding-right: 10px;
 }
 
-.todos .wrap img {
+.home .todos .wrap img {
   width: 24px;
   height: 24px;
   -o-object-fit: contain;
      object-fit: contain;
 }
 
-.todos .wrap img:hover {
+.home .todos .wrap img:hover {
   opacity: 0.5;
   cursor: pointer;
 }
 
-.todos li {
+.home .todos li {
   font-size: 1.5rem;
   padding: 1rem 2rem;
   border-top: 1px solid #f5f5f5;
   cursor: pointer;
 }
 
-.todos li.completed {
+.home .todos li.completed {
   text-decoration: line-through;
   color: #b5b5b5;
 }
 
-.small {
+.home .small {
   margin-top: 2rem;
   color: #b5b5b5;
   text-align: center;
